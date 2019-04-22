@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Drag N' Drop</title>
+    <meta name="description"
+        content="A DRAG AND DROP GAME TO TEST YOUR KNOWLEDGE OF SOME PROGRAMMING LANGUAGE LANGUAGE">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="web game, web app, programming languages, drag and drop features ">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="aple-mobile-web-app-capable" content="yes">
+
+    <!--linking styles-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Bungee Shade' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Oregano' rel='stylesheet'>
+    <!--icon-->
+    <link rel="shortcut icon" href="alphabets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="alphabets/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="main-body">
+        <div class="upperBody">
+            <section class="header">
+                <h1 class="title-box">Code Words</h1>
+                <h4 class="description-box">Guess, Drag N' Drop the letters that spell the programming term described by
+                    the hint into the boxes.
+                </h4>
+            </section>
+
+            <!-- drop to area-->
+            <section class="display">
+                <div class="display-row">
+                    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" class="display-box"></div>
+                    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" class="display-box"></div>
+                    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" class="display-box"></div>
+                    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" class="display-box"></div>
+                    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" class="display-box"></div>
+                    
+
+                </div>
+            </section>
+
+            <!--Hints section-->
+            <section id="hints">
+                <p id="hint">
+                    <mark>HINT:</mark> 
+                    <span class="hint">Sets of Instructions forming a program which is executed by a computer</span>
+                </p>
+            </section>
+
+            <!--Play button-->
+            <section id="buttons">
+                <button class="play">Play</button>
+                <button class="reset">Reset</button>
+                <button class="next">Next</button>
+            </section>
+
+            <section id="outputMessage">
+                <p><i class="outputMessage"></i></p>
+            </section>
+
+        </div>
+
+
+        <!--alphabets block section-->
+
+        <section class="alphabets-block" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+            <div class>
+
+
+                <img id="drag1" ondragstart="drag(event)" draggable="true" src="alphabets/a.png" data-letter="a"
+                    alt="letter A">
+                <img id="drag2" ondragstart="drag(event)" draggable="true" src="alphabets/b.jpg" data-letter="b"
+                    alt="letter B">
+                <img id="drag3" ondragstart="drag(event)" draggable="true" src="alphabets/c.png" data-letter="c"
+                    alt="letter C">
+                <img id="drag4" ondragstart="drag(event)" draggable="true" src="alphabets/d.jpg" data-letter="d"
+                    alt="letter D">
+                <img id="drag5" ondragstart="drag(event)" draggable="true" src="alphabets/e.png" data-letter="e"
+                    alt="letter E">
+                <img id="drag6" ondragstart="drag(event)" draggable="true" src="alphabets/f.png" data-letter="f"
+                    alt="letter F">
+
+                <img id="drag7" ondragstart="drag(event)" draggable="true" src="alphabets/g.png" data-letter="g"
+                    alt="letter G">
+                <img id="drag8" ondragstart="drag(event)" draggable="true" src="alphabets/h.png" data-letter="h"
+                    alt="letter H">
+                <img id="drag9" ondragstart="drag(event)" draggable="true" src="alphabets/i.png" data-letter="i"
+                    alt="letter I">
+                <img id="drag10" ondragstart="drag(event)" draggable="true" src="alphabets/j.png" data-letter="j"
+                    alt="letter J">
+                <img id="drag11" ondragstart="drag(event)" draggable="true" src="alphabets/k.png" data-letter="k"
+                    alt="letter K">
+                <img id="drag12" ondragstart="drag(event)" draggable="true" src="alphabets/l.png" data-letter="l"
+                    alt="letter L">
+
+                <img id="drag13" ondragstart="drag(event)" draggable="true" src="alphabets/m.png" data-letter="m"
+                    alt="letter M">
+                <img id="drag14" ondragstart="drag(event)" draggable="true" src="alphabets/n.png" data-letter="n"
+                    alt="letter N">
+                <img id="drag15" ondragstart="drag(event)" draggable="true" src="alphabets/o.png" data-letter="o"
+                    alt="letter O">
+                <img id="drag16" ondragstart="drag(event)" draggable="true" src="alphabets/p.png" data-letter="p"
+                    alt="letter P">
+                <img id="drag17" ondragstart="drag(event)" draggable="true" src="alphabets/q.png" data-letter="q"
+                    alt="letter Q">
+                <img id="drag18" ondragstart="drag(event)" draggable="true" src="alphabets/r.png" data-letter="r"
+                    alt="letter R">
+
+                <img id="drag19" ondragstart="drag(event)" draggable="true" src="alphabets\s.png" data-letter="s"
+                    alt="letter S">
+                <img id="drag20" ondragstart="drag(event)" draggable="true" src="alphabets\t.jpg" data-letter="t"
+                    alt="letter T">
+                <img id="drag21" ondragstart="drag(event)" draggable="true" src="alphabets\u.png" data-letter="u"
+                    alt="letter U">
+                <img id="drag22" ondragstart="drag(event)" draggable="true" src="alphabets\v.png" data-letter="v"
+                    alt="letter V">
+                <img id="drag23" ondragstart="drag(event)" draggable="true" src="alphabets\w.png" data-letter="w"
+                    alt="letter W">
+                <img id="drag24" ondragstart="drag(event)" draggable="true" src="alphabets\x.png" data-letter="x"
+                    alt="letter X">
+
+                <img id="drag25" ondragstart="drag(event)" draggable="true" src="alphabets\y.png" data-letter="y"
+                    alt="letter Y">
+                <img id="drag26" ondragstart="drag(event)" draggable="true" src="alphabets\z.png" data-letter="z"
+                    alt="letter Z">
+                <img id="drag27" ondragstart="drag(event)" draggable="true" src="alphabets\o.png" data-letter="o"
+                    alt="letter Y">
+                <img id="drag28" ondragstart="drag(event)" draggable="true" src="alphabets\a.png" data-letter="a"
+                    alt="letter Z">
+
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!--adding main page javascript functionalities-->
+    <script src="Javascript/codeWords.js"></script>
+    
+</body>
+
+</html>
