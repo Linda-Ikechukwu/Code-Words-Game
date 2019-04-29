@@ -28,6 +28,11 @@ const drop = (e) => {
 //Array containing the code words and their details
 const wordDetails = [
     {
+        word: ['c','o','d','e'],
+        hint : 'Sets of Instructions forming a program which is executed by a computer',
+        noOfBoxes : 4
+    },
+    {
        word: ['h','a','c','k'],
        hint : 'To breach a system or infastructure',
        noOfBoxes : 4
@@ -56,7 +61,7 @@ const wordDetails = [
 
 //Function to append display boxes and hints to the DOM.
 const writeToPage = () => {
-    let i = 0; 
+    let i = 1; 
     nextBtn.addEventListener('click',function(){
         //Remove displayBoxes already on the page
         while(displayRow.firstChild){
@@ -65,19 +70,26 @@ const writeToPage = () => {
         if(i < wordDetails.length){
             //write hint from the wordDetails array to document.
             hint.innerHTML = wordDetails[i].hint;
+            
             let num = wordDetails[i].noOfBoxes;
-
-            //Create display Boxes and write them to the document.
+           //Create display Boxes and write them to the document.
             for(let x = 0; x < num; x++){
                 let divBox = document.createElement("div");
                 divBox.id = 'div1';
                 divBox.className = 'display-box';
                 displayRow.appendChild(divBox);
             }
+            displayRow.id = i;
         }
-        i++
+        else{
+            let hintsSection = document.getElementById('hints');
+            hintsSection.style.display = 'none';
+            displayRow.innerHTML = '<h2>The End<h2>';
+            nextBtn.style.visibility = 'hidden';
+            playBtn.style.visibility = 'hidden';
+        }
+        i++;
     })
-    
 }
 
 //Check for empty boxes on play
@@ -89,19 +101,23 @@ const checkEmptyBoxes =()=>{
               isEmpty = 1;  
             }
         });
+        //If all boxes are filled check if answer is correct.
         if(isEmpty !== 1){
-          displayBoxes.forEach(function(displayBox){
-              //determine current array index
-              //check if each display box contains the corresponding value at the worddetails.word array
-              //output correct
-              //else output try again
-          })   
+            outputMessage.innerHTML = 'Just a moment please'; 
         }
         else{
             outputMessage.innerHTML = 'Fill Up all the boxes please';   
         }
     })
 }
+
+//Function to check if the boxes were filled correctly or not
+function checkAnswer(){
+    //Find out which writeDetails Array index is currently displayed
+    let currentArrayIndex = parseInt(displayRow.id);
+    console.dir(currentArrayIndex);
+}
+checkAnswer(); 
 
 //Add event listeners for drop and dragover to the dynamically created display boxes.
 document.addEventListener('drop', (e) => {

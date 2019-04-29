@@ -4,15 +4,11 @@
 <head>
     <title> Drag N' Drop</title>
     <meta name="description"
-        content="A DRAG AND DROP GAME TO TEST YOUR KNOWLEDGE OF SOME PROGRAMMING LANGUAGE LANGUAGE">
+        content="A DRAG AND DROP WEB GAME TO TEST YOUR KNOWLEDGE OF SOME PROGRAMMING TERMS">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="web game, web app, programming languages, drag and drop features ">
+    <meta name="keywords" content="web game, web app, programming languages, drag and drop, alphabets ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="aple-mobile-web-app-capable" content="yes">
-
-    <!--linking styles-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <!-- fonts -->
     <link href='https://fonts.googleapis.com/css?family=Bungee Shade' rel='stylesheet'>
@@ -27,21 +23,19 @@
         <div class="upperBody">
             <section class="header">
                 <h1 class="title-box">Code Words</h1>
-                <h4 class="description-box">Guess, Drag N' Drop the letters that spell the programming term described by
+                <h3 class="description-box">Guess, Drag N' Drop the letters that spell the programming term described by
                     the hint into the boxes.
-                </h4>
+                </h3>
             </section>
 
             <!-- drop to area-->
             <section class="display">
-                <div class="display-row">
+                <div class="display-row" id = "0">
                     <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" class="display-box"></div>
                     <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" class="display-box"></div>
                     <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" class="display-box"></div>
                     <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" class="display-box"></div>
                     <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" class="display-box"></div>
-                    
-
                 </div>
             </section>
 
@@ -66,15 +60,10 @@
 
         </div>
 
-
-        <!--alphabets block section-->
-
-        <section class="alphabets-block" ondrop="drop(event)" ondragover="allowDrop(event)">
-
+       <!--alphabets block section-->
+       <section class="alphabets-block" ondrop="drop(event)" ondragover="allowDrop(event)">
             <div class>
-
-
-                <img id="drag1" ondragstart="drag(event)" draggable="true" src="alphabets/a.png" data-letter="a"
+               <img id="drag1" ondragstart="drag(event)" draggable="true" src="alphabets/a.png" data-letter="a"
                     alt="letter A">
                 <img id="drag2" ondragstart="drag(event)" draggable="true" src="alphabets/b.jpg" data-letter="b"
                     alt="letter B">
@@ -134,17 +123,11 @@
                     alt="letter Y">
                 <img id="drag28" ondragstart="drag(event)" draggable="true" src="alphabets\a.png" data-letter="a"
                     alt="letter Z">
-
-
-            </div>
-
+           </div>
         </section>
-
     </div>
 
     <!--adding main page javascript functionalities-->
     <script src="Javascript/codeWords.js"></script>
-    
 </body>
-
 </html>

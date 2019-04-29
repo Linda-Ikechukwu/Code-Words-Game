@@ -23,13 +23,13 @@ button{
     border-radius: 4px;
     background-color:var(--main-color);
     margin-right: 10px; 
-    margin-top: 5px;
+    background-color: #DBEDFF;
 }
 .main-body{
     margin-left:auto;
     margin-right:auto;
     width: 70%;
-    height: 100vh;
+    height: 100%;
     background-color:white;
     border: 1px solid black;
     
@@ -54,11 +54,6 @@ img {
     width: 80px;
     height: 60px;
 }
-button{
-    background-color: #DBEDFF;
-    margin-bottom: 20px;
-    
-}
 .display-box {
     width: 85px;
     height: 65px;
@@ -80,11 +75,14 @@ section{
 }
 .title-box{
     font-family: 'Bungee Shade';
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 0px;
 }
-.description-box{
+.description-box, #hints, button{
     font-family: 'Oregano';
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-weight: bold;
 }
 
 [draggable] {
