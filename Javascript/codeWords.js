@@ -7,7 +7,6 @@ let displayBoxes = document.querySelectorAll('.display-box');
 let outputMessage = document.querySelector('.outputMessage');
 let displayRow = document.querySelector('.display-row');
 
-
 //Functions that facilitate drag and drop
 const allowDrop = (e) => {
     e.preventDefault();
@@ -38,6 +37,11 @@ const wordDetails = [
        noOfBoxes : 4
     },
     {
+        word: ['o','b','j','e','c','t'],
+        hint : 'a variable space with corresponding properties and values',
+        noOfBoxes : 6
+    },
+    {
         word: ['l','o','o','p'],
         hint:'A repetitive process',
         noOfBoxes : 4
@@ -46,6 +50,11 @@ const wordDetails = [
         word: ['m','e','t','h','o','d'],
         hint: 'A function attached to an object',
         noOfBoxes: 6
+    },
+    {
+        word: ['a','p','i'],
+        hint:'A set of routines, protocols and tools for building software appilications',
+        noOfBoxes : 3
     },
     {
         word: ['s','y','n','t','a','x'],
@@ -63,6 +72,9 @@ const wordDetails = [
 const writeToPage = () => {
     let i = 1; 
     nextBtn.addEventListener('click',function(){
+        //Clear output display message
+        outputMessage.innerHTML = " ";
+        checkAnswer()
         //Remove displayBoxes already on the page
         while(displayRow.firstChild){
             displayRow.removeChild(displayRow.firstChild);
@@ -70,7 +82,6 @@ const writeToPage = () => {
         if(i < wordDetails.length){
             //write hint from the wordDetails array to document.
             hint.innerHTML = wordDetails[i].hint;
-            
             let num = wordDetails[i].noOfBoxes;
            //Create display Boxes and write them to the document.
             for(let x = 0; x < num; x++){
@@ -92,8 +103,8 @@ const writeToPage = () => {
     })
 }
 
-//Check for empty boxes on play
-const checkEmptyBoxes =()=>{
+//Check for empty boxes
+const evaluateBoxes = () => {
     playBtn.addEventListener('click', function(){
         let isEmpty = 0;
         displayBoxes.forEach(function(displayBox){
@@ -102,22 +113,37 @@ const checkEmptyBoxes =()=>{
             }
         });
         //If all boxes are filled check if answer is correct.
-        if(isEmpty !== 1){
-            outputMessage.innerHTML = 'Just a moment please'; 
+        if(isEmpty === 1){
+            outputMessage.innerHTML = 'Fill Up all the boxes please'; 
         }
         else{
-            outputMessage.innerHTML = 'Fill Up all the boxes please';   
+            checkAnswer();
         }
-    })
+        
+    });
 }
 
 //Function to check if the boxes were filled correctly or not
 function checkAnswer(){
+    let isCorrect = false;
     //Find out which writeDetails Array index is currently displayed
     let currentArrayIndex = parseInt(displayRow.id);
-    console.dir(currentArrayIndex);
+    // Assign the corresponding word array of the writeDetails Array index to a variable
+    let currentWordArray = wordDetails[currentArrayIndex].word;
+    console.log(currentArrayIndex, currentWordArray);
+    for(let x = 0; x < displayBoxes.length; x++){
+        if(displayBoxes[x].childNodes[0].alt == currentWordArray[x]){
+           isCorrect = true;
+        }
+    }
+    if(isCorrect === true){
+        outputMessage.innerHTML = 'Correct !!!!';  
+    }
+    else{
+        outputMessage.innerHTML = 'Uh Oh, Try Again !!!!';
+    }
 }
-checkAnswer(); 
+ 
 
 //Add event listeners for drop and dragover to the dynamically created display boxes.
 document.addEventListener('drop', (e) => {
@@ -132,5 +158,6 @@ document.addEventListener('dragover', (e) => {
 })
 
 resetBtn.addEventListener('click', () => location.reload());
-checkEmptyBoxes();
+
 writeToPage();
+evaluateBoxes();
