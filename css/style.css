@@ -40,6 +40,8 @@ button{
 }
 .outputMessage{
     color:rgb(207, 25, 25);
+    font-weight: bold;
+    font-size: 20px;
     
 }
 .alphabets-block{
